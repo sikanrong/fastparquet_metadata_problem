@@ -24,6 +24,8 @@ The code contained in this repository is broken un between languages and parquet
 - `js/read_parquet.py`
 - `golang/read_parquet.go`
 
-In all the other languages and parquet libraries included, when reading from the parquet file's footer metadata, the number of rows returned reflects only the row count from a single chunk, instead of the total aggregate row count. 
+In all the other languages and parquet libraries included, when reading from the parquet file's footer metadata the number of rows returned reflects only the row count from a _single chunk_ instead of the total aggregate row count. 
 
-Specifically, the way that `fastparquet_write.py`  is written, it will write 30 chunks of `1e5` rows each. The correct total should be `3e6`. 
+**It would seem that when using `fastparquet.write` with `append=True`, the `num_rows` field in the foother metadata thrift is not being correctly updated...**
+
+Specifically, the way that `fastparquet_write.py`  is written, it will write `30` chunks of `1e5` rows each. The correct total should be `3e6`. 
