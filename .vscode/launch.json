@@ -1,0 +1,48 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "parquettest_read_js",
+            "type": "node",
+            "request": "launch",
+            "runtimeExecutable": "/home/your_user/.nvm/versions/node/v19.2.0/bin/node",
+            "program": "${cwd}/js/read_parquet.mjs",
+            "args": ["--dataset_path", "/home/your_user/test.parquet"]
+        },
+
+        {
+            "name": "parquettest_write_py_fastparquet",
+            "type": "python",
+            "request": "launch",
+            "program": "${cwd}/python/fastparquet_write.py",
+            "args": ["--fname", "/home/your_user/test.parquet"]
+        },
+
+        {
+            "name": "parquettest_read_py_fastparquet",
+            "type": "python",
+            "request": "launch",
+            "program": "${cwd}/python/fastparquet_read.py",
+            "args": ["--fname", "/home/your_user/test.parquet"]
+        },
+
+        {
+            "name": "parquettest_read_py_pyarrow",
+            "type": "python",
+            "request": "launch",
+            "program": "${cwd}/python/pyarrow_read.py",
+            "args": ["--fname", "/home/your_user/test.parquet"]
+        },
+
+        {
+            "name": "parquettest_read_golang",
+            "type": "go",
+            "request": "launch",
+            "program": "${cwd}/golang/read_parquet.go",
+            "args": ["--dataset_path", "/home/your_user/test.parquet"]
+        },
+    ]
+}
