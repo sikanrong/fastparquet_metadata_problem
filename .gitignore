@@ -1,0 +1,11 @@
+.vs
+.vscode
+__pycache__/
+.DS_Store
+.python-version
+*.egg-info
+train/
+wandb/
+*.log
+node_modules
+package-lock.json
